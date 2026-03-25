@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoofProMatch — Get Matched with Top Local Roofing Pros</title>
+<meta name="description" content="Get free quotes from top-rated, verified roofing professionals in your area. Fast, free, no obligation.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0B1D2E;
+  --navy-light: #132D45;
+  --navy-mid: #1A3A56;
+  --teal: #1A9BAA;
+  --teal-light: #22B8C9;
+  --teal-dark: #14808C;
+  --green: #2EAE60;
+  --green-light: #34C96E;
+  --orange: #E8593C;
+  --orange-hover: #D44A2E;
+  --white: #FFFFFF;
+  --off-white: #F7F8FA;
+  --gray-50: #F3F4F6;
+  --gray-100: #E5E7EB;
+  --gray-200: #D1D5DB;
+  --gray-300: #9CA3AF;
+  --gray-400: #6B7280;
+  --gray-500: #4B5563;
+  --gray-600: #374151;
+  --gray-700: #1F2937;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--gray-700);
+  background: var(--off-white);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HEADER ─── */
+.site-header {
+  background: var(--navy);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--teal), var(--green));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.logo-text span {
+  color: var(--teal-light);
+}
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar-container {
+  background: var(--gray-100);
+  height: 5px;
+  width: 100%;
+  position: sticky;
+  top: 64px;
+  z-index: 99;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--green));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ─── MAIN CONTAINER ─── */
+.main-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HERO SECTION ─── */
+.hero {
+  text-align: center;
+  padding: 48px 0 32px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26, 155, 170, 0.1);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.hero-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--teal);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 480px) {
+  .hero h1 { font-size: 44px; }
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--teal);
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ─── TRUST STRIP ─── */
+.trust-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px 0 32px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.trust-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ─── ZIP ENTRY ─── */
+.zip-entry {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto 24px;
+  width: 100%;
+}
+
+.zip-input-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.zip-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--gray-300);
+  pointer-events: none;
+}
+
+.zip-input {
+  width: 100%;
+  padding: 14px 14px 14px 42px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--gray-700);
+  background: var(--white);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.zip-input:focus {
+  border-color: var(--teal);
+}
+
+.zip-input::placeholder { color: var(--gray-300); }
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--orange-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(232, 89, 60, 0.35);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── STEP SCREENS ─── */
+.step-screen {
+  display: none;
+  flex: 1;
+  padding: 36px 0 100px;
+  animation: fadeUp 0.35s ease-out;
+}
+
+.step-screen.active { display: flex; flex-direction: column; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-question {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 480px) {
+  .step-question { font-size: 30px; }
+}
+
+/* ─── OPTION CARDS ─── */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  user-select: none;
+}
+
+.option-card:hover {
+  border-color: var(--gray-200);
+  background: var(--gray-50);
+}
+
+.option-card.selected {
+  border-color: var(--teal);
+  background: rgba(26, 155, 170, 0.04);
+}
+
+.option-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.option-card.selected .option-radio {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+
+.option-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--white);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.option-card.selected .option-radio-dot { opacity: 1; }
+
+.option-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
+.option-card.selected .option-label { color: var(--navy); }
+
+/* ─── TEXTAREA ─── */
+.text-area-wrap {
+  margin-bottom: 24px;
+}
+
+.text-area-wrap textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 16px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--gray-700);
+  background: var(--white);
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition);
+  line-height: 1.6;
+}
+
+.text-area-wrap textarea:focus { border-color: var(--teal); }
+.text-area-wrap textarea::placeholder { color: var(--gray-300); }
+
+.text-area-wrap .char-count {
+  text-align: right;
+  font-size: 12px;
+  color: var(--gray-300);
+  margin-top: 6px;
+}
+
+/* ─── CONTACT FORM ─── */
+.form-grid {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 480px) {
+  .form-row.two-col { grid-template-columns: 1fr 1fr; }
+}
+
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-500);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--gray-700);
+  background: var(--white);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-field input:focus,
+.form-field select:focus { border-color: var(--teal); }
+
+.form-field input::placeholder { color: var(--gray-300); }
+
+.ownership-toggle {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.own-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.own-btn:hover { border-color: var(--gray-200); }
+
+.own-btn.selected {
+  border-color: var(--teal);
+  background: rgba(26, 155, 170, 0.04);
+  color: var(--navy);
+}
+
+/* ─── NAVIGATION ─── */
+.step-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+  padding: 14px 20px;
+  display: none;
+  gap: 12px;
+  z-index: 100;
+}
+
+.step-nav.visible { display: flex; }
+
+.btn-back {
+  padding: 13px 24px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-back:hover { border-color: var(--gray-200); color: var(--gray-600); }
+
+.btn-next {
+  flex: 1;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px 24px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: -0.01em;
+}
+
+.btn-next:hover {
+  background: var(--orange-hover);
+}
+
+.btn-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── LOADING SCREEN ─── */
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+  flex: 1;
+}
+
+.loading-spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid var(--gray-100);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 28px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-content h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.loading-content p {
+  font-size: 15px;
+  color: var(--gray-400);
+}
+
+.loading-bar-wrap {
+  width: 100%;
+  max-width: 280px;
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--green));
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* ─── SUCCESS SCREEN ─── */
+.success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--teal), var(--green));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.success-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.success-content h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.success-content p {
+  font-size: 16px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 32px;
+}
+
+.success-details {
+  width: 100%;
+  max-width: 400px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.success-details h3 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-50);
+}
+
+.detail-row:last-child { border-bottom: none; }
+
+.detail-row svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.detail-row span {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 12px;
+  color: var(--gray-300);
+  border-top: 1px solid var(--gray-100);
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: var(--gray-400);
+  text-decoration: none;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+
+/* ─── DISCLAIMER TEXT ─── */
+.disclaimer {
+  font-size: 11px;
+  color: var(--gray-300);
+  line-height: 1.5;
+  text-align: center;
+  max-width: 400px;
+  margin: 12px auto 0;
+}
+
+/* ─── REQUIRED INDICATOR ─── */
+.req { color: var(--orange); }
+
+/* ─── VALIDATION ─── */
+.field-error {
+  border-color: var(--orange) !important;
+}
+
+.error-msg {
+  font-size: 12px;
+  color: var(--orange);
+  margin-top: 4px;
+  display: none;
+}
+
+.error-msg.visible { display: block; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#" class="logo" onclick="goToHero(); return false;">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M3 21V9l9-7 9 7v12H3z"/><path d="M9 21v-6h6v6" fill="rgba(255,255,255,0.3)"/></svg>
+    </div>
+    <div class="logo-text">Roof<span>Pro</span>Match</div>
+  </a>
+</header>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar-container">
+  <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+</div>
+
+<!-- MAIN -->
+<main class="main-container">
+
+  <!-- STEP 0: HERO / ZIP ENTRY -->
+  <div class="step-screen active" id="step-0">
+    <div class="hero">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
+        100% Free — No Obligation
+      </div>
+      <h1>Get Matched with <em>Top Local Roofing Pros</em></h1>
+      <p>Compare free quotes from verified, top-rated roofers in your area. Takes less than 2 minutes.</p>
+    </div>
+    <div class="zip-entry">
+      <div class="zip-input-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="currentColor"/></svg>
+        <input type="text" class="zip-input" id="zipInput" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric" autocomplete="postal-code">
+      </div>
+      <button class="btn-primary" id="zipBtn" onclick="startFlow()">Get Quotes</button>
+    </div>
+    <div class="trust-strip">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        Verified pros
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Fast &amp; free
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No obligation
+      </div>
+    </div>
+    <div class="disclaimer">By submitting, you agree to receive calls and texts from local roofing professionals. Your information is kept secure and never shared beyond matched contractors.</div>
+  </div>
+
+  <!-- STEP 1: PROJECT TYPE -->
+  <div class="step-screen" id="step-1">
+    <h2 class="step-question">What type of roofing project do you need?</h2>
+    <div class="options-group" data-step="1">
+      <div class="option-card" onclick="selectOption(this)" data-value="Replace entire roof">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Replace entire roof</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Repair existing roof">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Repair existing roof</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="New construction roof">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">New construction roof</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Roof inspection">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Roof inspection</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Other">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Other</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: LOCATION TYPE -->
+  <div class="step-screen" id="step-2">
+    <h2 class="step-question">What kind of property is this?</h2>
+    <div class="options-group" data-step="2">
+      <div class="option-card" onclick="selectOption(this)" data-value="Home / Residence">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Home / Residence</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Business / Commercial">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Business / Commercial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: BUILDING HEIGHT -->
+  <div class="step-screen" id="step-3">
+    <h2 class="step-question">How tall is the building?</h2>
+    <div class="options-group" data-step="3">
+      <div class="option-card" onclick="selectOption(this)" data-value="1 story">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">1 story</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="2+ stories">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">2+ stories</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Other">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Other</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: TIMELINE -->
+  <div class="step-screen" id="step-4">
+    <h2 class="step-question">When do you need this completed?</h2>
+    <div class="options-group" data-step="4">
+      <div class="option-card" onclick="selectOption(this)" data-value="Urgent (1-2 days)">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Urgent (1–2 days)</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Within 2 weeks">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Within 2 weeks</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="More than 2 weeks">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">More than 2 weeks</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Not sure - still planning">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Not sure — still planning / budgeting</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5: INSURANCE -->
+  <div class="step-screen" id="step-5">
+    <h2 class="step-question">Is this covered by an insurance claim?</h2>
+    <div class="options-group" data-step="5">
+      <div class="option-card" onclick="selectOption(this)" data-value="Yes">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Yes</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="No">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">No</span>
+      </div>
+      <div class="option-card" onclick="selectOption(this)" data-value="Not sure">
+        <div class="option-radio"><div class="option-radio-dot"></div></div>
+        <span class="option-label">Not sure</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 6: PROJECT DETAILS -->
+  <div class="step-screen" id="step-6">
+    <h2 class="step-question">Tell us a little about your project.</h2>
+    <div class="text-area-wrap">
+      <textarea id="projectDetails" placeholder="Any details that would help a roofer give you an accurate quote — damage description, roof material preference, special concerns, etc. (Optional)" maxlength="2000" oninput="updateCharCount()"></textarea>
+      <div class="char-count"><span id="charCount">0</span>/2,000</div>
+    </div>
+  </div>
+
+  <!-- STEP 7: CONTACT INFO -->
+  <div class="step-screen" id="step-7">
+    <h2 class="step-question">Almost done! How can roofers reach you?</h2>
+    <div class="form-grid">
+      <div class="form-row two-col">
+        <div class="form-field">
+          <label>First name <span class="req">*</span></label>
+          <input type="text" id="firstName" placeholder="First name" autocomplete="given-name">
+        </div>
+        <div class="form-field">
+          <label>Last name <span class="req">*</span></label>
+          <input type="text" id="lastName" placeholder="Last name" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Email address <span class="req">*</span></label>
+        <input type="email" id="emailAddress" placeholder="you@email.com" autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label>Phone number <span class="req">*</span></label>
+        <input type="tel" id="phoneNumber" placeholder="(555) 555-5555" autocomplete="tel" oninput="formatPhone(this)">
+      </div>
+      <div class="form-field">
+        <label>Street address <span class="req">*</span></label>
+        <input type="text" id="streetAddress" placeholder="123 Main St" autocomplete="street-address">
+      </div>
+      <div class="form-row two-col">
+        <div class="form-field">
+          <label>City <span class="req">*</span></label>
+          <input type="text" id="cityField" placeholder="City" autocomplete="address-level2">
+        </div>
+        <div class="form-field">
+          <label>State <span class="req">*</span></label>
+          <select id="stateField" autocomplete="address-level1">
+            <option value="">Select</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+            <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+            <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+            <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+            <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+            <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+            <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+            <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+            <option>DC</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Do you own this property? <span class="req">*</span></label>
+        <div class="ownership-toggle">
+          <button type="button" class="own-btn" onclick="selectOwnership(this, 'Yes')" data-value="Yes">Yes, I own it</button>
+          <button type="button" class="own-btn" onclick="selectOwnership(this, 'No')" data-value="No">No, I rent</button>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">By submitting, you consent to be contacted by roofing professionals by phone, text, and email regarding your project. Standard messaging rates may apply.</div>
+  </div>
+
+  <!-- STEP 8: LOADING -->
+  <div class="step-screen" id="step-8">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>Finding your matches...</h2>
+      <p>We're connecting you with top-rated roofers in your area.</p>
+      <div class="loading-bar-wrap">
+        <div class="loading-bar-fill" id="loadingBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 9: SUCCESS -->
+  <div class="step-screen" id="step-9">
+    <div class="success-content">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>You're all set!</h2>
+      <p>Top-rated roofing pros in your area have been notified. Expect a call within <strong>24 hours</strong>.</p>
+      <div class="success-details">
+        <h3>What happens next</h3>
+        <div class="detail-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>Local roofers will call you to discuss your project</span>
+        </div>
+        <div class="detail-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Compare quotes and reviews at no cost</span>
+        </div>
+        <div class="detail-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>No obligation — choose the best fit for you</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  &copy; 2026 RoofProMatch. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+</footer>
+
+<!-- BOTTOM NAV -->
+<div class="step-nav" id="stepNav">
+  <button class="btn-back" onclick="prevStep()">Back</button>
+  <button class="btn-next" id="nextBtn" onclick="nextStep()">Next</button>
+</div>
+
+<script>
+// ─── STATE ───
+let currentStep = 0;
+const totalSteps = 10;
+const answers = {};
+let ownershipValue = '';
+
+// ─── PROGRESS ───
+function updateProgress() {
+  const pct = currentStep === 0 ? 0 : Math.round((currentStep / (totalSteps - 1)) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+// ─── SHOW STEP ───
+function showStep(n) {
+  document.querySelectorAll('.step-screen').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById('step-' + n);
+  if (target) {
+    target.classList.add('active');
+    target.style.animation = 'none';
+    target.offsetHeight;
+    target.style.animation = '';
+  }
+  currentStep = n;
+  updateProgress();
+  updateNav();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── NAV VISIBILITY ───
+function updateNav() {
+  const nav = document.getElementById('stepNav');
+  const nextBtn = document.getElementById('nextBtn');
+  if (currentStep === 0 || currentStep === 8 || currentStep === 9) {
+    nav.classList.remove('visible');
+  } else {
+    nav.classList.add('visible');
+  }
+  if (currentStep === 7) {
+    nextBtn.textContent = 'Get My Matches';
+  } else if (currentStep === 6) {
+    nextBtn.textContent = 'Next';
+  } else {
+    nextBtn.textContent = 'Next';
+  }
+  // Enable/disable next based on step
+  nextBtn.disabled = !isStepValid();
+}
+
+// ─── VALIDATION ───
+function isStepValid() {
+  if (currentStep >= 1 && currentStep <= 5) {
+    return !!answers['step' + currentStep];
+  }
+  if (currentStep === 6) return true; // optional
+  if (currentStep === 7) return validateContactForm(false);
+  return true;
+}
+
+function validateContactForm(showErrors) {
+  const fields = [
+    { id: 'firstName', name: 'First name' },
+    { id: 'lastName', name: 'Last name' },
+    { id: 'emailAddress', name: 'Email' },
+    { id: 'phoneNumber', name: 'Phone' },
+    { id: 'streetAddress', name: 'Address' },
+    { id: 'cityField', name: 'City' },
+    { id: 'stateField', name: 'State' }
+  ];
+  let valid = true;
+  fields.forEach(f => {
+    const el = document.getElementById(f.id);
+    const val = el.value.trim();
+    if (!val) {
+      valid = false;
+      if (showErrors) el.classList.add('field-error');
+    } else {
+      el.classList.remove('field-error');
+    }
+  });
+  if (!ownershipValue) valid = false;
+  // Email format
+  const email = document.getElementById('emailAddress').value.trim();
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    valid = false;
+    if (showErrors) document.getElementById('emailAddress').classList.add('field-error');
+  }
+  return valid;
+}
+
+// ─── START FLOW ───
+function startFlow() {
+  const zip = document.getElementById('zipInput').value.trim();
+  if (!/^\d{5}$/.test(zip)) {
+    document.getElementById('zipInput').classList.add('field-error');
+    document.getElementById('zipInput').focus();
+    return;
+  }
+  document.getElementById('zipInput').classList.remove('field-error');
+  answers.zip = zip;
+  showStep(1);
+}
+
+// Enter key on zip
+document.getElementById('zipInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') startFlow();
+});
+
+// ─── OPTION SELECT ───
+function selectOption(card) {
+  const group = card.closest('.options-group');
+  group.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  const stepNum = group.dataset.step;
+  answers['step' + stepNum] = card.dataset.value;
+  updateNav();
+  // Auto-advance after a short delay
+  setTimeout(() => { if (isStepValid()) nextStep(); }, 300);
+}
+
+// ─── OWNERSHIP ───
+function selectOwnership(btn, val) {
+  document.querySelectorAll('.own-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  ownershipValue = val;
+  answers.ownership = val;
+  updateNav();
+}
+
+// ─── PHONE FORMAT ───
+function formatPhone(input) {
+  let v = input.value.replace(/\D/g, '');
+  if (v.length > 10) v = v.substring(0, 10);
+  if (v.length >= 7) {
+    input.value = '(' + v.substring(0,3) + ') ' + v.substring(3,6) + '-' + v.substring(6);
+  } else if (v.length >= 4) {
+    input.value = '(' + v.substring(0,3) + ') ' + v.substring(3);
+  } else if (v.length > 0) {
+    input.value = '(' + v;
+  }
+  updateNav();
+}
+
+// ─── CHAR COUNT ───
+function updateCharCount() {
+  const len = document.getElementById('projectDetails').value.length;
+  document.getElementById('charCount').textContent = len;
+}
+
+// ─── NEXT / PREV ───
+function nextStep() {
+  if (currentStep === 7) {
+    if (!validateContactForm(true)) return;
+    collectContactInfo();
+    showStep(8);
+    runLoadingAnimation();
+    return;
+  }
+  if (!isStepValid()) return;
+  if (currentStep === 6) {
+    answers.projectDetails = document.getElementById('projectDetails').value.trim();
+  }
+  showStep(currentStep + 1);
+}
+
+function prevStep() {
+  if (currentStep > 1) showStep(currentStep - 1);
+  else if (currentStep === 1) showStep(0);
+}
+
+function goToHero() {
+  if (currentStep <= 7) showStep(0);
+}
+
+// ─── COLLECT CONTACT ───
+function collectContactInfo() {
+  answers.firstName = document.getElementById('firstName').value.trim();
+  answers.lastName = document.getElementById('lastName').value.trim();
+  answers.email = document.getElementById('emailAddress').value.trim();
+  answers.phone = document.getElementById('phoneNumber').value.trim();
+  answers.street = document.getElementById('streetAddress').value.trim();
+  answers.city = document.getElementById('cityField').value.trim();
+  answers.state = document.getElementById('stateField').value;
+
+  var payload = {
+    firstName: answers.firstName,
+    lastName: answers.lastName,
+    email: answers.email,
+    phone: answers.phone,
+    street: answers.street,
+    city: answers.city,
+    state: answers.state,
+    zip: answers.zip,
+    ownership: answers.ownership || '',
+    projectType: answers['step1'] || '',
+    propertyType: answers['step2'] || '',
+    buildingHeight: answers['step3'] || '',
+    timeline: answers['step4'] || '',
+    insurance: answers['step5'] || '',
+    projectDetails: answers.projectDetails || ''
+  };
+
+  var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxi27-WcJT-orkqHOJxtyNJROUnr8f_EK48oc1qFAO2Oqy1l-GTRusMhc69wf-Kqv0UHw/exec';
+
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function(err) {
+    console.error('Webhook error:', err);
+  });
+
+  console.log('=== ROOFPROMATCH LEAD CAPTURED ===');
+  console.log(JSON.stringify(payload, null, 2));
+}
+
+// ─── LOADING ANIMATION ───
+function runLoadingAnimation() {
+  const bar = document.getElementById('loadingBar');
+  let pct = 0;
+  const steps = [
+    { target: 35, delay: 400 },
+    { target: 60, delay: 900 },
+    { target: 85, delay: 1500 },
+    { target: 100, delay: 2200 }
+  ];
+  steps.forEach(s => {
+    setTimeout(() => { bar.style.width = s.target + '%'; }, s.delay);
+  });
+  setTimeout(() => { showStep(9); }, 3000);
+}
+
+// ─── LISTEN FOR INPUT CHANGES ON CONTACT FORM ───
+['firstName','lastName','emailAddress','phoneNumber','streetAddress','cityField','stateField'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => updateNav());
+  document.getElementById(id).addEventListener('change', () => updateNav());
+});
+
+// ─── INIT ───
+updateProgress();
+</script>
+
+</body>
+</html>
